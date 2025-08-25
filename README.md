@@ -1,70 +1,242 @@
-# Getting Started with Create React App
+# Hệ thống Quản lý Gia sư
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hệ thống quản lý gia sư toàn diện với các chức năng cho Admin, Giáo viên và Học sinh.
 
-## Available Scripts
+## Tính năng chính
 
-In the project directory, you can run:
+### 🔐 Xác thực (Authentication)
 
-### `npm start`
+- Đăng ký tài khoản với vai trò (Admin/Giáo viên/Học sinh)
+- Đăng nhập/Đăng xuất
+- Quên mật khẩu (OTP/Email)
+- Quản lý hồ sơ cá nhân
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 👨‍💼 Admin
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **CRUD Giáo viên**: Thêm, sửa, xóa, xem danh sách giáo viên
+- **CRUD Lịch học**: Quản lý lịch học của tất cả người dùng
+- **CRUD Người dùng**: Quản lý tài khoản người dùng
+- **Thống kê**: Dashboard với số liệu tổng quan
 
-### `npm test`
+### 👨‍🏫 Giáo viên
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Xem lịch dạy**: Lịch học hôm nay và sắp tới
+- **Điểm danh học sinh**: Check-in/out học sinh
+- **Tạo hồ sơ**: Cập nhật thông tin cá nhân và chuyên môn
+- **Quản lý hồ sơ**: Xem và chỉnh sửa thông tin
 
-### `npm run build`
+### 👨‍🎓 Học sinh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Xem lịch học**: Lịch học cá nhân
+- **Đăng ký học**: Tìm và đăng ký với giáo viên
+- **Đánh giá giáo viên**: Rate và review sau buổi học
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🔔 Thông báo (Notifications)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Thông báo thay đổi lịch học
+- Tin nhắn mới
+- Nhắc nhở buổi học
 
-### `npm run eject`
+### 🔍 Tìm kiếm & Lọc
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Tìm giáo viên theo môn học, giá, địa điểm
+- Lọc theo đánh giá
+- Tìm kiếm nâng cao
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### ⭐ Hệ thống Review & Ranking
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Top giáo viên
+- Top học sinh tích cực
+- Đánh giá và nhận xét
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 📅 Lịch (Calendar View)
 
-## Learn More
+- Giao diện hiển thị trực quan buổi học
+- Quản lý lịch học
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Công nghệ sử dụng
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Frontend**: React 19, Material-UI
+- **Backend**: JSON Server (REST API)
+- **State Management**: React Context API
+- **Routing**: React Router DOM
+- **HTTP Client**: Axios
 
-### Code Splitting
+## Cài đặt và chạy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Yêu cầu hệ thống
 
-### Analyzing the Bundle Size
+- Node.js (version 16 trở lên)
+- npm hoặc yarn
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Bước 1: Clone repository
 
-### Making a Progressive Web App
+```bash
+git clone <repository-url>
+cd asg
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Bước 2: Cài đặt dependencies
 
-### Advanced Configuration
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Bước 3: Chạy ứng dụng
 
-### Deployment
+```bash
+# Chạy cả frontend và backend
+npm run dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Hoặc chạy riêng lẻ:
+# Backend (JSON Server)
+npm run server
 
-### `npm run build` fails to minify
+# Frontend (React)
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Bước 4: Truy cập ứng dụng
+
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:3001
+
+## Tài khoản mẫu
+
+### Admin
+
+- Email: admin@tutoring.com
+- Password: admin123
+
+### Giáo viên
+
+- Email: tutor1@example.com
+- Password: tutor123
+
+### Học sinh
+
+- Email: student1@example.com
+- Password: student123
+
+## Cấu trúc dự án
+
+```
+asg/
+├── public/
+├── src/
+│   ├── components/          # Components tái sử dụng
+│   │   ├── LoadingSpinner.js
+│   │   └── Navbar.js
+│   ├── context/            # React Context
+│   │   └── AuthContext.js
+│   ├── pages/              # Các trang chính
+│   │   ├── AdminDashboard.js
+│   │   ├── TutorDashboard.js
+│   │   ├── StudentDashboard.js
+│   │   ├── Login.js
+│   │   ├── Register.js
+│   │   ├── Profile.js
+│   │   ├── TutorList.js
+│   │   ├── ScheduleManagement.js
+│   │   ├── Notifications.js
+│   │   └── Messages.js
+│   ├── services/           # API services
+│   │   └── api.js
+│   ├── styles/             # CSS styles
+│   ├── utils/              # Utility functions
+│   ├── App.js              # Main App component
+│   └── index.js            # Entry point
+├── db.json                 # Database (JSON Server)
+├── package.json
+└── README.md
+```
+
+## API Endpoints
+
+### Authentication
+
+- `GET /users` - Lấy danh sách người dùng
+- `POST /users` - Tạo người dùng mới
+- `PUT /users/:id` - Cập nhật người dùng
+- `DELETE /users/:id` - Xóa người dùng
+
+### Tutors
+
+- `GET /tutors` - Lấy danh sách giáo viên
+- `POST /tutors` - Tạo giáo viên mới
+- `PUT /tutors/:id` - Cập nhật giáo viên
+- `DELETE /tutors/:id` - Xóa giáo viên
+
+### Schedules
+
+- `GET /schedules` - Lấy danh sách lịch học
+- `POST /schedules` - Tạo lịch học mới
+- `PUT /schedules/:id` - Cập nhật lịch học
+- `DELETE /schedules/:id` - Xóa lịch học
+
+### Reviews
+
+- `GET /reviews` - Lấy danh sách đánh giá
+- `POST /reviews` - Tạo đánh giá mới
+- `PUT /reviews/:id` - Cập nhật đánh giá
+- `DELETE /reviews/:id` - Xóa đánh giá
+
+### Notifications
+
+- `GET /notifications` - Lấy thông báo
+- `POST /notifications` - Tạo thông báo mới
+- `PUT /notifications/:id` - Cập nhật thông báo
+
+### Messages
+
+- `GET /messages` - Lấy tin nhắn
+- `POST /messages` - Gửi tin nhắn mới
+- `PUT /messages/:id` - Cập nhật tin nhắn
+
+## Tính năng nổi bật
+
+### 🎨 Giao diện hiện đại
+
+- Material-UI Design System
+- Responsive design
+- Dark/Light theme support
+- Intuitive user interface
+
+### 🔒 Bảo mật
+
+- Role-based access control
+- Protected routes
+- Form validation
+- Secure authentication
+
+### 📱 Responsive
+
+- Mobile-friendly design
+- Tablet optimization
+- Desktop experience
+
+### ⚡ Performance
+
+- Lazy loading
+- Optimized API calls
+- Efficient state management
+
+## Đóng góp
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Hỗ trợ
+
+Nếu bạn gặp vấn đề hoặc có câu hỏi, vui lòng tạo issue trong repository.
+
+---
+
+**Lưu ý**: Đây là phiên bản demo sử dụng JSON Server làm backend. Trong môi trường production, bạn nên sử dụng database thực tế như PostgreSQL, MySQL hoặc MongoDB.
